@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: odajsxvry-nodejs-gitops
+  description: This is GitOps manifest for odajsxvry-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=odajsxvry-nodejs
+    backstage.io/kubernetes-id: odajsxvry-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: odajsxvry-nodejs   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:odajsxvry-nodejs
